@@ -1,0 +1,17 @@
+client/
+commands/
+events/
+handler/
+log/
+models/
+node_modules/
+SlashCommands/
+color.json
+config.json
+Dockerfile
+docker-compose.yml
+index.js
+NekoIceBot-SourceCode.zip
+package.json
+package-lock.json
+shard.js
