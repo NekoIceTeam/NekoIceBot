@@ -23,7 +23,7 @@ jobs:
           passphrase: ${{ secrets.PASSPHRASE }}
 
       - name: Decrypy SC
-        run : gpg --multifile --decrypt NekoIceBot-SourceCode.zip.gpg && unzip NekoIceBot-SourceCode.zip
+        run : gpg --multifile --decrypt NekoIceBot-SourceCode.zip.gpg && unzip NekoIceBot-SourceCode.zip -y
 
       - name: Use Node.js 16.x
         uses: actions/setup-node@v2
