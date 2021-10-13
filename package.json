@@ -1,0 +1,49 @@
+{
+  "name": "nekoicebot",
+  "version": "1.3.0",
+  "description": "A Discord Bot Made By NekoIceCream For Fun",
+  "main": "shard.js",
+  "engine": {
+    "node": "16.11.1",
+    "npm": "8.0.0"
+  },
+  "scripts": {
+    "test": "nodemon shard.js",
+    "start": "node shard.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NekoIceTeam/NekoIceBot.git"
+  },
+  "keywords": [
+    "discord",
+    "js",
+    "bot",
+    "discordjs"
+  ],
+  "author": "NekoIceCream",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NekoIceTeam/NekoIceBot/issues"
+  },
+  "homepage": "https://github.com/NekoIceTeam/NekoIceBot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "ascii-table": "^0.0.9",
+    "cron": "^1.8.2",
+    "discord-player": "^5.1.0",
+    "discord.js": "^13.2.0",
+    "esm": "^3.2.25",
+    "fs": "^0.0.1-security",
+    "glob": "^7.2.0",
+    "mathjs": "^9.5.0",
+    "mongoose": "^6.0.10",
+    "ms": "^2.1.3",
+    "node-fetch": "^3.0.0",
+    "node-key-sender": "^1.0.11",
+    "reconlx": "^2.4.3",
+    "something-random-on-discord": "^3.4.4",
+    "util": "^0.12.4",
+    "weather-js": "^2.0.0"
+  }
+}
