@@ -5,10 +5,13 @@ handler/
 models/
 node_modules/
 SlashCommands/
-src/
-color.json
+src
+.eslintrc.js
+color.js
 config.js
-Dockerfile
 docker-compose.yml
+Dockerfile
+gpg.sh
 index.js
 NekoIceBot-SourceCode.zip
+NekoIceBot-SourceCode-Backup.zip
