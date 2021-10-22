@@ -32,7 +32,7 @@ jobs:
         passphrase: ${{ secrets.PASSPHRASE }}
 
     - name: Decrypy SC
-      run : gpg --multifile --decrypt NekoIceBot-SourceCode.zip.gpg && unzip NekoIceBot-SourceCode.zip 
+      run : gpg --multifile --decrypt NekoIceBot-SourceCode.zip.pgp && unzip NekoIceBot-SourceCode.zip 
 
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v1
