@@ -2,7 +2,7 @@
 
 <div align="center">
 	<a href="https://github.com/NekoIceTeam/NekoIceBot/actions">
-		<img src="https://github.com/NekoIceTeam/NekoIceBot/actions/workflows/checker-ci.yml/badge.svg" alt="Checker CI" />
+		<img src="https://github.com/NekoIceTeam/NekoIceBot/actions/workflows/build-ci.yml/badge.svg" alt="Build CI" />
 	</a>
 </div>
 
