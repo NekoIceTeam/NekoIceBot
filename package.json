@@ -4,8 +4,8 @@
   "description": "A Discord Bot And Website Made By NekoIceCream For Fun",
   "main": "shard.js",
   "engines": {
-    "node": "16.11.1",
-    "npm": "8.1.0"
+    "node": "17.1.0",
+    "npm": "8.1.2"
   },
   "scripts": {
     "start": "nodemon shard.js"
