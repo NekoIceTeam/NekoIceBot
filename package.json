@@ -58,7 +58,8 @@
     "something-random-on-discord": "^3.4.4",
     "superagent": "^6.1.0",
     "util": "^0.12.4",
-    "weather-js": "^2.0.0"
+    "weather-js": "^2.0.0",
+    "imageapi.js": "^1.7.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
