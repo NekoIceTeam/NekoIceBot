@@ -1,17 +1,5 @@
-client/
-commands/
-events/
-handler/
-models/
-node_modules/
-SlashCommands/
-src
-.eslintrc.js
-color.js
-config.js
-docker-compose.yml
-Dockerfile
-gpg.sh
-index.js
-NekoIceBot-SourceCode.zip
-NekoIceBot-SourceCode-Backup.zip
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
