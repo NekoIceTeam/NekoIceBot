@@ -5,34 +5,19 @@ package org.nekoiceteam.nekoicebot
 
 import kotlin.time.*
 import kotlin.system.*
-import dev.minn.jda.ktx.CoroutineEventManager
-import dev.minn.jda.ktx.await
-import dev.minn.jda.ktx.interactions.choice
-import dev.minn.jda.ktx.interactions.slash
-import dev.minn.jda.ktx.interactions.option
-import dev.minn.jda.ktx.interactions.updateCommands
-import dev.minn.jda.ktx.light
-import dev.minn.jda.ktx.onCommand
+import dev.minn.jda.ktx.interactions.*
+import dev.minn.jda.ktx.*
 import kotlinx.coroutines.*
-import net.dv8tion.jda.api.JDA
-import net.dv8tion.jda.api.entities.Member
-import net.dv8tion.jda.api.entities.Message
-import net.dv8tion.jda.api.entities.Role
-import net.dv8tion.jda.api.events.ShutdownEvent
-import net.dv8tion.jda.api.events.guild.GenericGuildEvent
-import net.dv8tion.jda.api.events.guild.GuildJoinEvent
-import net.dv8tion.jda.api.events.guild.GuildReadyEvent
-import net.dv8tion.jda.api.exceptions.HierarchyException
-import net.dv8tion.jda.api.exceptions.InsufficientPermissionException
-import net.dv8tion.jda.api.exceptions.PermissionException
-import net.dv8tion.jda.api.requests.RestAction
-import net.dv8tion.jda.api.utils.AllowedMentions
+import net.dv8tion.jda.api.*
+import net.dv8tion.jda.api.entities.*
+import net.dv8tion.jda.api.events.*
+import net.dv8tion.jda.api.events.guild.*
+import net.dv8tion.jda.api.exceptions.*
+import net.dv8tion.jda.api.requests.*
+import net.dv8tion.jda.api.utils.*
 import java.lang.Integer.max
 import java.util.*
-import java.util.concurrent.CancellationException
-import java.util.concurrent.Executors
-import java.util.concurrent.ForkJoinPool
-import java.util.concurrent.TimeUnit
+import java.util.concurrent.*
 import kotlin.concurrent.thread
 import kotlin.time.Duration.Companion.minutes
 
@@ -40,15 +25,14 @@ import kotlin.time.Duration.Companion.minutes
 fun main() {
     val jda = light("TOKEN")
     
-   jda.onCommand("ping") { event->
-       val time = measureTime {
-           event.reply("Pong!").await()
-       }.inWholeMilliseconds
+    jda.onCommand("ping") { event->
+        val time = measureTime {
+            event.reply("Pong!").await()
+        }.inWholeMilliseconds
 
-       event.hook.editOriginal(":ping_pong: Pong: $time ms").queue()
-   }
-   
-   jda.updateCommands {
+        event.hook.editOriginal(":ping_pong: Pong: $time ms").queue()
+    }
+    jda.updateCommands {
     slash("ban", "Ban a user") {
         option<User>("user", "The user to ban", true)
         option<String>("reason", "Why to ban this user")
