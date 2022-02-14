@@ -23,7 +23,9 @@ import kotlin.time.Duration.Companion.minutes
 
 @ExperimentalTime
 fun main() {
-    val jda = light("TOKEN")
+    val jda = light("TOKEN", enableCoroutines=true) {
+        intents += listOf(GatewayIntent.GUILD_MEMBERS)
+}
     
     jda.onCommand("ping") { event->
         val time = measureTime {
@@ -32,42 +34,5 @@ fun main() {
 
         event.hook.editOriginal(":ping_pong: Pong: $time ms").queue()
     }
-    jda.updateCommands {
-    slash("ban", "Ban a user") {
-        option<User>("user", "The user to ban", true)
-        option<String>("reason", "Why to ban this user")
-        option<Int>("duration", "For how long to ban this user") {
-            choice("1 day", 1)
-            choice("1 week", 7)
-            choice("1 month", 31)
-        }
-    }
-
-    slash("mod", "Moderation commands") {
-        subcommand("ban", "Ban a user") {
-            option<User>("user", "The user to ban", true)
-            option<String>("reason", "Why to ban this user")
-            option<Int>("duration", "For how long to ban this user") {
-                choice("1 day", 1)
-                choice("1 week", 7)
-                choice("1 month", 31)
-            }
-        }
-
-        subcommand("prune", "Prune messages") {
-            option<Int>("amount", "The amount to delete from 2-100, default 50")
-        }
-    }
-}.queue()
-
-jda.upsertCommand("prune", "Prune messages") {
-    option<Int>("amount", "The amount to delete from 2-100, default 50")
-}.queue()
-
-val menu = SelectMenu("menu:class") {
-    option("Frost Mage", "mage-frost", emoji=FROST_SPEC, default=true)
-    option("Fire Mage", "mage-fire", emoji=FIRE_SPEC)
-    option("Arcane Mage", "mage-arcane", emoji=ARCANE_SPEC)
-}
 }
 

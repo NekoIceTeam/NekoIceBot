@@ -33,7 +33,8 @@ dependencies {
 
     implementation("net.dv8tion:JDA:5.0.0-alpha.5")
     implementation("com.github.minndevelopment:jda-ktx:0.8.4-alpha.5")
-    //implementation("org.slf4j:log4j-over-slf4j:1.7.9")
+    implementation("com.github.MinnDevelopment:jda-reactor:v1.5.0")
+    implementation("org.slf4j:slf4j-simple:1.7.9")
 }
 
 testing {
@@ -50,3 +51,5 @@ application {
     // Define the main class for the application.
     mainClass.set("org.nekoiceteam.nekoicebot.AppKt")
 }
+
+

@@ -1,4 +1,4 @@
-<h1 align="center">NekIceBot</h1>
+<h1 align="center">NekoIceBot</h1>
 
 <div align="center">
 	<a href="https://github.com/NekoIceTeam/NekoIceBot/actions">
@@ -14,21 +14,20 @@
 - [License](https://github.com/NekoIceTeam/NekoIceBot/blob/main/LICENSE.md)
 
 ## Introduction
-NekoIceBot is a Discord bot created by NekoIceCream written in JavaScript with npm, this bot was created for fun and learning on developing with JavaScript.
+NekoIceBot is a Discord bot created by NekoIceCream written in Kotlin with gradle, this bot was created for fun and learning on developing with Kotlin.
+Dependencies i use [jda](https://github.com/DV8FromTheWorld) [jda-ktx](https://github.com/MinnDevelopment/jda-ktx) [jda-reactor](https://github.com/MinnDevelopent/jda-reactor)
 
 ## Installation
 - Coming Soon!
 
 ## Current Status
-1. Custom Status [Not Work] [In Progress To Fix]
-2. MongoDB Database [Work] [Fixed]
-3. Activity Status [Not Work]
+1. Registering Slash Commands [Not Work] [In Progress To Fix]
 
 ## Plan
 1. Fix Bugs
 2. Multi Language
-3. ChatBot [In Progress To Do It]
-4. Shard Support [Done]
+3. ChatBot 
+4. Shard Support [In Progress To Do It]
 5. Slash Commands
-6. Economy Bot [In Progress To Do It]
-7. Website
+6. Economy Bot 
+7. Website [In Progress To Do It]
