@@ -3,3 +3,6 @@
 
 # Ignore Gradle build output directory
 build
+
+# Ifnore IDE project-specific cache directory
+.idea
