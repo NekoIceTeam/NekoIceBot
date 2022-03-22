@@ -8,12 +8,13 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
+import net.dv8tion.jda.api.utils.Compression;
+
 
 public class App {
 	public static void main(String[] args) {
 		JDABuilder builder = JDABuilder.createDefault(args[0]);
-		
-		builder.disableCache(CacheFlag.MEMBER_OVERRIDES, CacheFlag.VOICE_STATE);
+
 		builder.setBulkDeleteSplittingEnabled(false);
 		builder.setCompression(Compression.ZLIB);
 		builder.setActivity(Activity.playing("With Your Mom"));

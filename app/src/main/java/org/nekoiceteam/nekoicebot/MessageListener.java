@@ -26,8 +26,7 @@ public class MessageListener extends ListenerAdapter {
         final User author = event.getAuthor();
         final MessageChannel channel = event.getChannel();
         final Member self = event.getGuild().getSelfMember();
-        final GuildVoiceState selfVoiceState = self.getVoiceState();
-
+        
         String ftr = "Command executed by " + event.getAuthor().getAsTag();
         String avURL = event.getAuthor().getAvatarUrl();
         embed.setFooter(ftr, avURL);
