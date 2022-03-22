@@ -3,7 +3,16 @@
 
 # Ignore Gradle build output directory
 build
-app/buid
+app/build
 
-# Ifnore IDE project-specific cache directory
+# Ignore IDE project-specific cache directory
 .idea
+.metadata
+.project
+app/.project
+.settings
+app/.settings
+.classpath 
+app/.classpath
+app/bin
+
