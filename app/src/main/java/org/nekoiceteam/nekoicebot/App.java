@@ -22,7 +22,7 @@ public class App {
 		builder.setChunkingFilter(ChunkingFilter.ALL);
         	builder.setMemberCachePolicy(MemberCachePolicy.ALL);
                 builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES)    ;
-                builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES)
+                builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES);
 		try {
 			builder.build();
 		} catch (LoginException e) {
