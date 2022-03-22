@@ -20,6 +20,17 @@ public class MessageListener extends ListenerAdapter {
     public void onMessageReceived(MessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split(" ");
         EmbedBuilder embed = new EmbedBuilder();
+        embed.setColor(Color.PINK);
+
+        final Member member = event.getMember();
+        final User author = event.getAuthor();
+        final MessageChannel channel = event.getChannel();
+        final Member self = event.getGuild().getSelfMember();
+        final GuildVoiceState selfVoiceState = self.getVoiceState();
+
+        String ftr = "Command executed by " + event.getAuthor().getAsTag();
+        String avURL = event.getAuthor().getAvatarUrl();
+        embed.setFooter(ftr, avURL);
         
         if (args[0].equalsIgnoreCase(prefix + "help")) {
            embed.setTitle("Coming Soon!");
