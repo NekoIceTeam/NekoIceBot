@@ -15,9 +15,11 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
 public class MessageListener extends ListenerAdapter {
 	public String prefix = ","; 
+	
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
         String[] args = event.getMessage().getContentRaw().split(" ");
+        EmbedBuilder embed = new EmbedBuilder();
         
         if (args[0].equalsIgnoreCase(prefix + "help")) {
            embed.setTitle("Coming Soon!");
