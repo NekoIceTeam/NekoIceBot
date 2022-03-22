@@ -34,6 +34,7 @@ public class MessageListener extends ListenerAdapter {
             embed.addField("Websocket:", gwp + "ms", false);
             channel.sendMessageEmbeds(embed.build()).queue();
             embed.clear();
+            }
        
     }
 }
