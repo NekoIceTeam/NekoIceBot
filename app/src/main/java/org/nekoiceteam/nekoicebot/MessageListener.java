@@ -20,7 +20,7 @@ public class MessageListener extends ListenerAdapter {
         String[] args = event.getMessage().getContentRaw().split(" ");
         
         if (args[0].equalsIgnoreCase(prefix + "help")) {
-           embed.setTitle("Coming Soon!")
+           embed.setTitle("Coming Soon!");
            channel.sendMessageEmbeds(embed.build()).queue();
            embed.clear();
            }
