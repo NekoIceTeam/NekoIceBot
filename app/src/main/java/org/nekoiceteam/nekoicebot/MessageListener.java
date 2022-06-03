@@ -2,9 +2,9 @@ package org.nekoiceteam.nekoicebot;
 
 import java.awt.Color;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Member;
+import java.time.temporal.ChronoUnit;
+import java.time.LocalDateTime;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 
@@ -18,7 +18,6 @@ public class MessageListener extends ListenerAdapter {
         embed.setColor(Color.PINK);
 
         final MessageChannel channel = event.getChannel();
-        final Member self = event.getGuild().getSelfMember();
         
         String ftr = "Command executed by " + event.getAuthor().getAsTag();
         String avURL = event.getAuthor().getAvatarUrl();
@@ -32,10 +31,12 @@ public class MessageListener extends ListenerAdapter {
            
         if (args[0].equalsIgnoreCase(prefix + "ping")) {
             long gw = event.getJDA().getGatewayPing();
+            LocalDateTime time = LocalDateTime.now();
+            long ping = time.until(LocalDateTime.now(), ChronoUnit.MILLIS);
             String gwp = Long.toString(gw);
             embed.setTitle("Pong!", null);
             embed.setDescription("");
-            embed.addField("Ping:", "...." + "ms", false);
+            embed.addField("Ping:", ping + "ms", false);
             embed.addField("Websocket:", gwp + "ms", false);
             channel.sendMessageEmbeds(embed.build()).queue();
             embed.clear();

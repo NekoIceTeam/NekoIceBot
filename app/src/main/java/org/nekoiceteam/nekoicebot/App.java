@@ -20,7 +20,7 @@ public class App {
 		builder.setBulkDeleteSplittingEnabled(false);
 		builder.setCompression(Compression.ZLIB);
 		builder.setActivity(Activity.playing("With Your Mom"));
-		builder.setStatus(OnlineStatus.ONLINE);
+		builder.setStatus(OnlineStatus.IDLE);
 		builder.addEventListeners(new MessageListener());
 		builder.setChunkingFilter(ChunkingFilter.ALL);
         	builder.setMemberCachePolicy(MemberCachePolicy.ALL);
