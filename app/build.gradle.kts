@@ -26,7 +26,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation("com.google.guava:guava:30.1.1-jre")
-    implementation("net.dv8tion:JDA:5.0.0-alpha.5")
+    implementation("net.dv8tion:JDA:5.0.0-alpha.12")
     implementation("org.slf4j:slf4j-simple:1.7.9")
     implementation(group = "org.jetbrains.intellij.deps", name = "trove4j", version = "1.0.20200330")
 }

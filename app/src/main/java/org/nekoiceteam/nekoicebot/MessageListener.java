@@ -1,14 +1,9 @@
 package org.nekoiceteam.nekoicebot;
 
 import java.awt.Color;
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
 import net.dv8tion.jda.api.EmbedBuilder;
-import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.Message;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.entities.Role;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -22,12 +17,9 @@ public class MessageListener extends ListenerAdapter {
         EmbedBuilder embed = new EmbedBuilder();
         embed.setColor(Color.PINK);
 
-        final Member member = event.getMember();
-        final User author = event.getAuthor();
         final MessageChannel channel = event.getChannel();
         final Member self = event.getGuild().getSelfMember();
-        final GuildVoiceState selfVoiceState = self.getVoiceState();
-
+        
         String ftr = "Command executed by " + event.getAuthor().getAsTag();
         String avURL = event.getAuthor().getAvatarUrl();
         embed.setFooter(ftr, avURL);
