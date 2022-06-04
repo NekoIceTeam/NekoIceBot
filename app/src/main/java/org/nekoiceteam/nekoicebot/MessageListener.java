@@ -33,9 +33,8 @@ public class MessageListener extends ListenerAdapter {
 
             LocalDateTime time = LocalDateTime.now();
             long gw = event.getJDA().getGatewayPing();
-	    long gwp = Long.toString(gw);
 	    long ping = time.until(LocalDateTime.now(), ChronoUnit.MILLIS);
-            embed.setTitle("Pong!", null);
+            embed.setTitle("Pong! :ping_pong:", null);
             embed.setDescription("");
             embed.addField("Ping:", ping + "ms", false);
             embed.addField("Websocket:", gwp + "ms", false);
