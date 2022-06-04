@@ -16,6 +16,8 @@ public class MessageListener extends ListenerAdapter {
         String[] args = event.getMessage().getContentRaw().split(" ");
         EmbedBuilder embed = new EmbedBuilder();
         embed.setColor(Color.PINK);
+        LocalDateTime time = LocalDateTime.now();
+        long gw = event.getJDA().getGatewayPing();
 
         final MessageChannel channel = event.getChannel();
         
@@ -30,10 +32,7 @@ public class MessageListener extends ListenerAdapter {
            }
            
         if (args[0].equalsIgnoreCase(prefix + "ping")) {
-            long gw = event.getJDA().getGatewayPing();
-            LocalDateTime time = LocalDateTime.now();
-            long ping = time.until(LocalDateTime.now(), ChronoUnit.MILLIS);
-            String gwp = Long.toString(gw);
+
             embed.setTitle("Pong!", null);
             embed.setDescription("");
             embed.addField("Ping:", ping + "ms", false);
