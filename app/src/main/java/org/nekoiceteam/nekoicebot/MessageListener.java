@@ -20,7 +20,7 @@ public class MessageListener extends ListenerAdapter {
 
         final MessageChannel channel = event.getChannel();
         
-        String ftr = "Command executed by " + event.getAuthor().getAsTag();
+        String ftr = event.getAuthor().getAsTag();
         String avURL = event.getAuthor().getAvatarUrl();
         embed.setFooter(ftr, avURL);
         
@@ -28,6 +28,7 @@ public class MessageListener extends ListenerAdapter {
            embed.setTitle("Coming Soon!");
            channel.sendMessageEmbeds(embed.build()).queue();
            embed.clear();
+           System.out.println(ftr + "use help command!");
            }
            
         if (args[0].equalsIgnoreCase(prefix + "ping")) {
@@ -41,6 +42,7 @@ public class MessageListener extends ListenerAdapter {
             embed.addField("Websocket:", gw + "ms", false);
             channel.sendMessageEmbeds(embed.build()).queue();
             embed.clear();
+            System.out.println(ftr + "use ping command!");
             }
        
     }
