@@ -31,7 +31,7 @@ public class MessageListener extends ListenerAdapter {
            
         if (args[0].equalsIgnoreCase(prefix + "ping")) {
 
-            LocalDateTime time = LocalDateTime.now();
+            LocalDateTime time = event.getMessage().getTimeCreated();
             long gw = event.getJDA().getGatewayPing();
 	    long ping = time.until(LocalDateTime.now(), ChronoUnit.MILLIS);
             embed.setTitle("Pong! :ping_pong:", null);
