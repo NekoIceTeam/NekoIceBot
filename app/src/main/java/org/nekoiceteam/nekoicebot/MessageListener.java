@@ -37,7 +37,7 @@ public class MessageListener extends ListenerAdapter {
             embed.setTitle("Pong! :ping_pong:", null);
             embed.setDescription("");
             embed.addField("Ping:", ping + "ms", false);
-            embed.addField("Websocket:", gwp + "ms", false);
+            embed.addField("Websocket:", gw + "ms", false);
             channel.sendMessageEmbeds(embed.build()).queue();
             embed.clear();
             }
