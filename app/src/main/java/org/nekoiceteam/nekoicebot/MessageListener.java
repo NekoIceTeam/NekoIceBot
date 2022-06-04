@@ -34,7 +34,7 @@ public class MessageListener extends ListenerAdapter {
 
             OffsetDateTime time = event.getMessage().getTimeCreated();
             long gw = event.getJDA().getGatewayPing();
-	    long ping = time.until(LocalDateTime.now(), ChronoUnit.MILLIS);
+	    long ping = time.until(OffsetDateTime.now(), ChronoUnit.MILLIS);
             embed.setTitle("Pong! :ping_pong:", null);
             embed.setDescription("");
             embed.addField("Ping:", ping + "ms", false);
