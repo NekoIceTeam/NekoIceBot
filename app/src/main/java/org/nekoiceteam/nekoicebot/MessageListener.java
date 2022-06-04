@@ -32,9 +32,9 @@ public class MessageListener extends ListenerAdapter {
         if (args[0].equalsIgnoreCase(prefix + "ping")) {
 
             LocalDateTime time = LocalDateTime.now();
-	    long ping = time.until(LocalDateTime.now(), ChronoUnit.MILLIS);
             long gw = event.getJDA().getGatewayPing();
 	    long gwp = Long.toString(gw);
+	    long ping = time.until(LocalDateTime.now(), ChronoUnit.MILLIS);
             embed.setTitle("Pong!", null);
             embed.setDescription("");
             embed.addField("Ping:", ping + "ms", false);
