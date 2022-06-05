@@ -16,3 +16,5 @@ app/.settings
 app/.classpath
 app/bin
 
+# Ignore Config
+config.txt

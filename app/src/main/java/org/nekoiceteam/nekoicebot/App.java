@@ -1,5 +1,9 @@
 package org.nekoiceteam.nekoicebot;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.List;
 import javax.security.auth.login.LoginException;
 import net.dv8tion.jda.api.utils.Compression;
 import net.dv8tion.jda.api.JDABuilder;
@@ -10,13 +14,12 @@ import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 
 public class App {
-	public static void main(String[] args)  throws LoginException {
-            if (args.length < 1) {
-                System.out.println("You have to provide a token as first argument!");
-		System.out.println("Example: java (another args) -jar (path/to/jar) (token)");
-                System.exit(1);
-            }
-		JDABuilder builder = JDABuilder.createDefault(args[0]);
+	public static void main(String[] args)  throws LoginException, IOException, IllegalArgumentException {
+            
+            List<String> list = Files.readAllLines(Paths.get("config.txt"));
+            String token = list.get(0);
+            
+		JDABuilder builder = JDABuilder.createDefault(token);
 		
 		builder.setBulkDeleteSplittingEnabled(false);
 		builder.setCompression(Compression.ZLIB);
