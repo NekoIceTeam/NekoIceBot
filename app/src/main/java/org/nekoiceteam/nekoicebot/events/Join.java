@@ -27,4 +27,12 @@ public class Join extends ListenerAdapter {
     event.getGuild().getTextChannelById("940774861662486558").sendMessage("Welcome to NekoIceTeam server " + event.getMember().getAsMention() + "!").queue();
     
     }
+        public void onGuildMemberRemove(@NotNull GuildMemberJoinEvent event) {
+        
+        if(!event.getGuild().getId().equals("940595375859974194")){
+        return;
+    }
+    event.getGuild().getTextChannelById("940774861662486558").sendMessage("Goodbye " + event.getMember().getAsMention() + "!").queue();
+    
+    }
 }
