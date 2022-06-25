@@ -2,9 +2,6 @@ package org.nekoiceteam.nekoicebot;
 
 import java.awt.Color;
 import net.dv8tion.jda.api.EmbedBuilder;
-import java.time.temporal.ChronoUnit;
-import java.time.LocalDateTime;
-import java.time.OffsetDateTime;
 import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -28,22 +25,8 @@ public class MessageListener extends ListenerAdapter {
            embed.setTitle("Coming Soon!");
            channel.sendMessageEmbeds(embed.build()).queue();
            embed.clear();
-           System.out.println(ftr + "use help command!");
+           System.out.println(ftr + " use help command!");
            }
            
-        if (args[0].equalsIgnoreCase(prefix + "ping")) {
-
-            OffsetDateTime time = event.getMessage().getTimeCreated();
-            long gw = event.getJDA().getGatewayPing();
-	    long ping = time.until(OffsetDateTime.now(), ChronoUnit.MILLIS);
-            embed.setTitle("Pong! :ping_pong:", null);
-            embed.setDescription("");
-            embed.addField("Ping:", ping + "ms", false);
-            embed.addField("Websocket:", gw + "ms", false);
-            channel.sendMessageEmbeds(embed.build()).queue();
-            embed.clear();
-            System.out.println(ftr + "use ping command!");
-            }
-       
     }
 }

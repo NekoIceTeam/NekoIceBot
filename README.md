@@ -15,15 +15,21 @@
 - [License](https://github.com/NekoIceTeam/NekoIceBot/blob/main/LICENSE.md)
 
 ## Introduction
-NekoIceBot is a Discord bot created by NekoIceCream written in Kotlin with gradle, this bot was created for fun and learning on developing with Kotlin.
-Dependencies i use [jda](https://github.com/DV8FromTheWorld)
+NekoIceBot is a Discord bot created by NekoIceCream written in Java with gradle, this bot was created for fun and learning on developing with Kotlin.
+Dependencies i use [JDA](https://github.com/DV8FromTheWorld)
 
 ## Installation
 - Install Java 8, i suggest from [Adoptium](https://adoptium.net)
-- Download jar files in [release](https://github.com/NekoIceTeam/NekoIceBot/releases/) page
+- Download jar files in [Release page](https://github.com/NekoIceTeam/NekoIceBot/releases/) page
+- make a config file in root directory 
+./config.txt
+```
+TOKEN
+```
+
 - Run jar files with command
 ```
-java -jar NekoIceBot.jar <token>
+java -jar NekoIceBot.jar
 ```
 
 ## Building
@@ -32,8 +38,13 @@ java -jar NekoIceBot.jar <token>
 git clone https://github.com/NekoIceTeam/NekoIceBot.git
 ```
 - Build this repository
+For Linux and MacOS
 ```
-gradlew shadowJar
+./gradlew build
+```
+For Windows
+```
+gradlew.bat build
 ```
 
 ## Current Status
