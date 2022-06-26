@@ -6,6 +6,7 @@ import net.dv8tion.jda.api.entities.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.nekoiceteam.nekoicebot.utils.Logger;
+import java.io.IOException;
 
 public class MessageListener extends ListenerAdapter {
 
@@ -22,7 +23,11 @@ public class MessageListener extends ListenerAdapter {
         String ftr = event.getAuthor().getAsTag();
         String avURL = event.getAuthor().getAvatarUrl();
         embed.setFooter(ftr, avURL);
-        logger = new Logger("Log");
+        try {
+            logger = new Logger("Log");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         
         if (args[0].equalsIgnoreCase(prefix + "help")) {
            embed.setTitle("Coming Soon!");
