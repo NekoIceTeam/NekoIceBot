@@ -17,7 +17,7 @@ import org.nekoiceteam.nekoicebot.events.Join;
 public class App {
 	public static void main(String[] args)  throws LoginException, IOException, IllegalArgumentException {
             
-            System.out.println("Initializing the bot, Please Wait!");
+            System.out.println("Initializing the bot, Please wait!");
             List<String> list = Files.readAllLines(Paths.get("config.txt"));
             String token = list.get(0);
             
@@ -27,11 +27,10 @@ public class App {
 		builder.setCompression(Compression.ZLIB);
 		builder.setActivity(Activity.playing("With Your Mom"));
 		builder.setStatus(OnlineStatus.IDLE);
-		builder.addEventListeners(new MessageListener());
 		builder.setChunkingFilter(ChunkingFilter.ALL);
         	builder.setMemberCachePolicy(MemberCachePolicy.ALL);
                 builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES);
-                builder.addEventListeners(new Join());
+                builder.addEventListeners(new MessageListener(), new Join());
 		builder.build();
             }
 }
