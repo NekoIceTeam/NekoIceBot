@@ -8,8 +8,8 @@ import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import org.nekoiceteam.nekoicebot.utils.Logger;
 
 public class MessageListener extends ListenerAdapter {
-    
-        Logger logger;
+
+    Logger logger;
 	public String prefix = ","; 
 	
     @Override
@@ -22,6 +22,7 @@ public class MessageListener extends ListenerAdapter {
         String ftr = event.getAuthor().getAsTag();
         String avURL = event.getAuthor().getAvatarUrl();
         embed.setFooter(ftr, avURL);
+        logger = new Logger("Log");
         
         if (args[0].equalsIgnoreCase(prefix + "help")) {
            embed.setTitle("Coming Soon!");
