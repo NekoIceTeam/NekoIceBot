@@ -29,6 +29,7 @@ dependencies {
     implementation("net.dv8tion:JDA:5.0.0-alpha.12")
     implementation("org.slf4j:slf4j-simple:1.7.9")
     implementation(group = "org.jetbrains.intellij.deps", name = "trove4j", version = "1.0.20200330")
+    //implementation("com.jagrosh:jda-utilities:")
 }
 
 testing {

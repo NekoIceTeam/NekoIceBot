@@ -13,6 +13,7 @@ import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
+import org.nekoiceteam.nekoicebot.commands.utils.test;
 import org.nekoiceteam.nekoicebot.events.Join;
 import org.nekoiceteam.nekoicebot.utils.Logger;
 
@@ -40,9 +41,11 @@ public class Bot {
 		builder.setChunkingFilter(ChunkingFilter.ALL);
         	builder.setMemberCachePolicy(MemberCachePolicy.ALL);
                 builder.enableIntents(GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_MESSAGES);
-                builder.addEventListeners(new MessageListener(), new Join());
+                builder.addEventListeners(new Join(), new test());
                 Client = builder.build();
                 Client.awaitReady();
                 logger.info("Bot is ready!");
+                
+                Client.upsertCommand("test", "testing slash command").queue();
             }
 }

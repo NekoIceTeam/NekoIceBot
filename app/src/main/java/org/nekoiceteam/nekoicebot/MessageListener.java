@@ -11,7 +11,7 @@ import java.io.IOException;
 public class MessageListener extends ListenerAdapter {
 
     Logger logger;
-	public String prefix = ","; 
+    public String prefix = ","; 
 	
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {

@@ -18,7 +18,7 @@ public class Logger {
         logfile = new File(name + ".log");
 
         if (logfile.exists() && !logfile.isDirectory()) {
-            System.out.printf(TerminalColors.YELLOW + "%s[WARN][%s (INITIALIZER)]: An existing file with the name \"%s\" already exists! Deleting.\n" + TerminalColors.RESET, getTimestampString(), logname, logname + ".txt");
+            System.out.printf(TerminalColors.YELLOW + "%s[WARN][%s] : An existing file with the name \"%s\" already exists! Deleting.\n" + TerminalColors.RESET, getTimestampString(), logname, logname + ".txt");
             logfile.delete();
         }
         logfile.createNewFile();
