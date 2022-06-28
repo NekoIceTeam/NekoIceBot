@@ -16,19 +16,19 @@ import org.nekoiceteam.nekoicebot.utils.Logger;
  */
 public class test extends ListenerAdapter {
     
-    Logger logger;
+    //Logger logger;
     
     public void onSlashCommandInteraction(@NotNull SlashCommandInteractionEvent event) {
-        String ftr = event.getAuthor().getAsTag();
-        try {
-            logger = new Logger("Log");
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
+        //String ftr = event.getAuthor().getAsTag();
+        //try {
+            //logger = new Logger("Log");
+        //} catch (IOException e) {
+            //throw new RuntimeException(e);
+        //}
         
         if (event.getName().equals("test"))
             event.deferReply().queue();
             event.getHook().sendMessage("test slash work!").setEphemeral(true).queue();
-            logger.info(ftr + " use test slash command!");
+            //logger.info(ftr + " use test slash command!");
     }
 }
