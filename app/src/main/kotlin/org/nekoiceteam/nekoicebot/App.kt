@@ -11,7 +11,7 @@ import javax.security.auth.login.LoginException
 object App {
     @Throws(NullPointerException::class, LoginException::class, IOException::class, InterruptedException::class)
     @JvmStatic
-    fun main(args: Array<String>) {
+    fun main(args: Array<String?>?) {
         val Client = Bot(args)
     }
 }
