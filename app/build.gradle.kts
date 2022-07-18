@@ -12,7 +12,8 @@ import com.github.jengelman.gradle.plugins.shadow.tasks.ShadowJar
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
-    java
+    kotlin("jvm") version "1.7.0"
+    //java
     id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
@@ -29,22 +30,23 @@ dependencies {
     implementation("net.dv8tion:JDA:5.0.0-alpha.12")
     implementation("org.slf4j:slf4j-simple:1.7.9")
     implementation(group = "org.jetbrains.intellij.deps", name = "trove4j", version = "1.0.20200330")
-    //implementation("com.jagrosh:jda-utilities:")
+    implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+    implementation(platform("org.jetbrains.kotlin:kotlin-bom"))
 }
 
 testing {
     suites {
         // Configure the built-in test suite
         val test by getting(JvmTestSuite::class) {
-            // Use JUnit Jupiter test framework
-            useJUnitJupiter("5.8.1")
+            // Use Kotlin Test test framework
+            useKotlinTest()
         }
     }
 }
 
 application {
     // Define the main class for the application.
-    mainClass.set("org.nekoiceteam.nekoicebot.App")
+    mainClass.set("org.nekoiceteam.nekoicebot.AppKt")
 }
 
 tasks {
@@ -52,7 +54,7 @@ tasks {
         archiveBaseName.set("shadow")
         mergeServiceFiles()
         manifest {
-            attributes(mapOf("Main-Class" to "org.nekoiceteam.nekoicebot.App"))
+            attributes(mapOf("Main-Class" to "org.nekoiceteam.nekoicebot.AppKt"))
         }
     }
 }
